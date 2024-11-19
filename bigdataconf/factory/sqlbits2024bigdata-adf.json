@@ -1,0 +1,9 @@
+{
+	"name": "sqlbits2024bigdata-adf",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b7deb0ee-0bf8-48d4-bab8-ed864fabf117",
+		"tenantId": "0f6f68be-4ef2-465a-986b-eb9a250d9789"
+	}
+}
