@@ -3,11 +3,47 @@
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
-			"sources": [],
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ADLS_TSV_AdventureWorks",
+						"type": "DatasetReference"
+					},
+					"name": "Product"
+				},
+				{
+					"dataset": {
+						"referenceName": "ADLS_TSV_AdventureWorks",
+						"type": "DatasetReference"
+					},
+					"name": "ProductSubcategory"
+				},
+				{
+					"dataset": {
+						"referenceName": "ADLS_TSV_AdventureWorks",
+						"type": "DatasetReference"
+					},
+					"name": "ProductCategory"
+				}
+			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				""
+				"source(output(",
+				"          {_col0_} as short,",
+				"          {_col1_} as string,",
+				"          {_col2_} as string,",
+				"          {_col3_} as timestamp",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Product",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> ProductSubcategory",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> ProductCategory"
 			]
 		}
 	}
